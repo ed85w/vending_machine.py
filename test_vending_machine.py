@@ -21,8 +21,8 @@ class TestVendingMachine(unittest.TestCase):
 
     def test_not_enough_money(self):
         """if user does not have enough money for item, they should be told so"""
-        item, change, _ = give_item_and_change('coke', 0.2)
-        self.assertEqual(change, 0.2,'not enough money')
+        _, _, message = give_item_and_change('coke', 0.2)
+        self.assertEqual(message, 'not enough money')
 
     def test_lots_of_coins(self):
         """enter multiple coins"""
